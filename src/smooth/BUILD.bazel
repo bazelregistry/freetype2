@@ -1,0 +1,8 @@
+cc_library(
+  name = "smooth",
+  srcs = ["ftsmooth.c", "ftgrays.c"],
+  hdrs = glob(["*.h"]),
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

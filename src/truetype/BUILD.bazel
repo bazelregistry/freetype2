@@ -1,0 +1,16 @@
+cc_library(
+  name = "truetype",
+  srcs = ["truetype.c"],
+  hdrs = glob(["*.h"]) + [
+    'ttdriver.c',
+    'ttgload.c',
+    'ttgxvar.c',
+    'ttinterp.c',
+    'ttobjs.c',
+    'ttpload.c',
+    'ttsubpix.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

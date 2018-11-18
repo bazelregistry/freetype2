@@ -1,0 +1,29 @@
+BASE_SRC_HDRS = [
+  'ftadvanc.c',
+  'ftcalc.c',
+  'ftcolor.c',
+  'ftdbgmem.c',
+  'fterrors.c',
+  'ftfntfmt.c',
+  'ftgloadr.c',
+  'fthash.c',
+  'ftlcdfil.c',
+  'ftmac.c',
+  'ftobjs.c',
+  'ftoutln.c',
+  'ftpsprop.c',
+  'ftrfork.c',
+  'ftsnames.c',
+  'ftstream.c',
+  'fttrigon.c',
+  'ftutil.c',
+]
+
+cc_library(
+  name = "base",
+  srcs = glob(["*.c"], exclude = BASE_SRC_HDRS),
+  hdrs = glob(["*.h"]) + BASE_SRC_HDRS,
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

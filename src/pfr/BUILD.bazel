@@ -1,0 +1,15 @@
+cc_library(
+  name = "pfr",
+  srcs = ["pfr.c"],
+  hdrs = glob(["*.h"]) + [
+    'pfrcmap.c',
+    'pfrdrivr.c',
+    'pfrgload.c',
+    'pfrload.c',
+    'pfrobjs.c',
+    'pfrsbit.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

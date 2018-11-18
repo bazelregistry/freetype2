@@ -1,0 +1,14 @@
+cc_library(
+  name = "cid",
+  srcs = ["type1cid.c"],
+  hdrs = glob(["*.h"]) + [
+    'cidgload.c',
+    'cidload.c',
+    'cidobjs.c',
+    'cidparse.c',
+    'cidriver.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

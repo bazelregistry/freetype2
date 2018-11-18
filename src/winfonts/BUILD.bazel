@@ -1,0 +1,7 @@
+cc_library(
+  name = "winfonts",
+  srcs = glob(["*.c", "*.h"]),
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

@@ -1,0 +1,16 @@
+cc_library(
+  name = "gzip",
+  srcs = ["ftgzip.c"],
+  hdrs = glob(["*.h"]) + [
+    'zutil.c',
+    'inftrees.c',
+    'infutil.c',
+    'infcodes.c',
+    'infblock.c',
+    'inflate.c',
+    'adler32.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

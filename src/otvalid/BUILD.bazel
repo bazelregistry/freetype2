@@ -1,0 +1,17 @@
+cc_library(
+  name = "otvalid",
+  srcs = ["otvalid.c"],
+  hdrs = glob(["*.h"]) + [
+    'otvbase.c',
+    'otvcommn.c',
+    'otvgdef.c',
+    'otvgpos.c',
+    'otvgsub.c',
+    'otvjstf.c',
+    'otvmath.c',
+    'otvmod.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

@@ -1,0 +1,17 @@
+cc_library(
+  name = "cache",
+  srcs = ["ftcache.c"],
+  hdrs = glob(["*.h"]) + [
+    'ftcbasic.c',
+    'ftccache.c',
+    'ftccmap.c',
+    'ftcglyph.c',
+    'ftcimage.c',
+    'ftcmanag.c',
+    'ftcmru.c',
+    'ftcsbits.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

@@ -1,0 +1,37 @@
+cc_library(
+  name = "ft2_hdrs",
+  hdrs = glob(["include/**/*.h"]),
+  strip_include_prefix = "include",
+  visibility = ["//:__subpackages__"],
+)
+
+cc_library(
+  name = "freetype2",
+  deps = [
+    ":ft2_hdrs",
+    "//src/autofit:autofit",
+    "//src/base:base",
+    "//src/bdf:bdf",
+    "//src/bzip2:bzip2",
+    "//src/cache:cache",
+    "//src/cff:cff",
+    "//src/cid:cid",
+    "//src/gxvalid:gxvalid",
+    "//src/gzip:gzip",
+    "//src/lzw:lzw",
+    "//src/otvalid:otvalid",
+    "//src/pcf:pcf",
+    "//src/pfr:pfr",
+    "//src/psaux:psaux",
+    "//src/pshinter:pshinter",
+    "//src/psnames:psnames",
+    "//src/raster:raster",
+    "//src/sfnt:sfnt",
+    "//src/smooth:smooth",
+    "//src/truetype:truetype",
+    "//src/type1:type1",
+    "//src/type42:type42",
+    "//src/winfonts:winfonts",
+  ],
+  visibility = ["//visibility:public"],
+)

@@ -1,0 +1,18 @@
+# cc_test(
+#   name = "test_afm",
+#   args = ["test"],
+#   srcs = ["test_afm.c"],
+#   deps = ["//:freetype2"],
+# )
+
+cc_test(
+  name = "test_bbox",
+  srcs = ["test_bbox.c"],
+  deps = ["//:freetype2"],
+)
+
+# cc_test(
+#   name = "test_trig",
+#   srcs = ["test_trig.c"],
+#   deps = ["//:freetype2"],
+# )

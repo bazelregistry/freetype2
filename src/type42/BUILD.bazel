@@ -1,0 +1,12 @@
+cc_library(
+  name = "type42",
+  srcs = ["type42.c"],
+  hdrs = glob(["*.h"]) + [
+    't42drivr.c',
+    't42objs.c',
+    't42parse.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

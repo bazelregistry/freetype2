@@ -1,0 +1,15 @@
+cc_library(
+  name = "type1",
+  srcs = ["type1.c"],
+  hdrs = glob(["*.h"]) + [
+    't1afm.c',
+    't1driver.c',
+    't1gload.c',
+    't1load.c',
+    't1objs.c',
+    't1parse.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

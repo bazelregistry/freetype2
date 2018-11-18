@@ -1,0 +1,10 @@
+cc_library(
+  name = "psnames",
+  srcs = ["psnames.c"],
+  hdrs = glob(["*.h"]) + [
+    'psmodule.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

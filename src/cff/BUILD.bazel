@@ -1,0 +1,15 @@
+cc_library(
+  name = "cff",
+  srcs = ["cff.c"],
+  hdrs = glob(["*.h"]) + [
+    'cffcmap.c',
+    'cffdrivr.c',
+    'cffgload.c',
+    'cffparse.c',
+    'cffload.c',
+    'cffobjs.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

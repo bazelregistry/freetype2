@@ -1,0 +1,11 @@
+cc_library(
+  name = "bdf",
+  srcs = ["bdf.c"],
+  hdrs = glob(["*.h"]) + [
+    "bdflib.c",
+    "bdfdrivr.c",
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

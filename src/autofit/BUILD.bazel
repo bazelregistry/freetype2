@@ -1,0 +1,23 @@
+cc_library(
+  name = "autofit",
+  hdrs = glob(["*.h"]) + [
+    "afangles.c",
+    "afblue.c",
+    "afcjk.c",
+    "afdummy.c",
+    "afglobal.c",
+    "afhints.c",
+    "afindic.c",
+    "aflatin.c",
+    "aflatin2.c",
+    "afloader.c",
+    "afmodule.c",
+    "afranges.c",
+    "afshaper.c",
+    "afwarp.c",
+  ],
+  srcs = ["autofit.c"],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)

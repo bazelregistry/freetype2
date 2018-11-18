@@ -1,0 +1,13 @@
+cc_library(
+  name = "pshinter",
+  srcs = ["pshinter.c"],
+  hdrs = glob(["*.h"]) + [
+    'pshalgo.c',
+    'pshglob.c',
+    'pshmod.c',
+    'pshrec.c',
+  ],
+  deps = ["//:ft2_hdrs"],
+  defines = ["FT2_BUILD_LIBRARY", "FT_ADVANCES_H=<freetype/ftadvanc.h>"],
+  visibility = ["//:__subpackages__"],
+)
